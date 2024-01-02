@@ -12,6 +12,18 @@ public class Main {
         System.out.println("Converter mile-kilometer/kilometer-mile\n");
         String info = getInfo();
         System.out.print(info);
+        try{
+            num = sc.nextDouble();
+            if (num < 0){
+                System.out.println("Impossible value of kilometers. ");
+            } else {
+                result = convertKilometresToMiles(num);
+                System.out.printf("Mile equals is %.2f ", result);
+            }
+        } catch(Exception e){
+            System.out.println("Invalid input. Please enter a valid number.");
+        }
+
     }
 
     private static String getInfo(){
