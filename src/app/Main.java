@@ -33,6 +33,4 @@ public class Main {
     private static double convertKilometresToMiles (double num){
         return num * kilometerToMile;
     }
-
-
 }
