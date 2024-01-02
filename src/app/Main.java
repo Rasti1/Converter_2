@@ -11,6 +11,8 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("Converter mile-kilometer/kilometer-mile");
+        String info = getInfo();
+        System.out.print(info);
 
     }
     private static String getInfo(){
