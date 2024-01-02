@@ -11,45 +11,29 @@ public class Main {
     static final double mileToKilometer = 1.61;
 
     public static void main(String[] args) {
-        System.out.println("Converter mile-kilometer/kilometer-mile\n");
-        String info = getKilometersInfo();
-        System.out.print(info);
-        try{
+
+        System.out.println("Converter mile-kilometer/kilometer-mile.\n");
+        try {
+            System.out.print("Enter a distance value: ");
             num = sc.nextDouble();
-            if (num < 0){
-                System.out.println("Impossible value of miles. ");
+            if (num < 0) {
+                System.out.println("Impossible value. Please enter a non-negative number.");
             } else {
-                result = convertMilesToKilometres(num);
-                System.out.printf("Kilometers equals is %.2f ", result);
+                result = convertMileToKilometer(num);
+                System.out.printf("Converted to kilometers: %.2f\n", result);
+
+                result = convertKilometerToMile(num);
+                System.out.printf("Converted to miles: %.2f\n", result);
             }
-        } catch(Exception e) {
-            System.out.println("Invalid input. Please enter a valid number.");
-        }
-        try{
-            num = sc.nextDouble();
-            if (num < 0){
-                System.out.println("Impossible value of kilometers. ");
-            } else {
-                result = convertKilometresToMiles(num);
-                System.out.printf("Mile equals is %.2f ", result);
-            }
-        } catch(Exception e){
+        } catch (Exception e) {
             System.out.println("Invalid input. Please enter a valid number.");
         }
 
     }
-
-    private static String getKilometersInfo(){
-        return "Enter number of kilometres: ";
-    }
-    private static String getMilesInfo(){
-        return "Enter number of miles: ";
-    }
-
-    private static double convertMilesToKilometres (double num){
-        return num * mileToKilometer;
-    }
-    private static double convertKilometresToMiles (double num){
+    private static double convertKilometerToMile (double num){
         return num * kilometerToMile;
+    }
+    private static double convertMileToKilometer (double num){
+        return num * mileToKilometer;
     }
 }
